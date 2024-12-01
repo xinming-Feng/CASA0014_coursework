@@ -57,7 +57,7 @@ void loop() {
 
     client.loop();
 
-    // 用实际的读数函数代替readTemperatureSensor()和readHumiditySensor()
+    // get temperature & humidity 
     float temperature = dht.readTemperature(false);
 
     float humidity = dht.readHumidity(false);
@@ -154,10 +154,10 @@ void callback(char* topic, byte* payload, int length) {
     Serial.println();
 }
 
-//用温度和湿度的读书决定灯的RGBW
+//The readings of temperature and humidity are used to determine the RGBW of the light
 ColorValues decide_message(float temperature, float humidity){
     ColorValues cv;
-    //转换成华氏度，计算heat index
+    //Convert to Fahrenheit and calculate the heat index
     float temperatureF = temperature * 9.0 / 5.0 + 32.0;
     float heatIndex = -42.379 
                     + 2.04901523 * temperatureF 
@@ -171,28 +171,29 @@ ColorValues decide_message(float temperature, float humidity){
                     
     Serial.println(heatIndex);
 
-    // Heat index的范围
+    // Range of Heat index
     float minRange = 80.0;
     float maxRange = 137.0;
 
-    // 将 heat index 限制在定义的范围内
+    // Limit the heat index to the defined range
     if (heatIndex < minRange) heatIndex = minRange;
     if (heatIndex > maxRange) heatIndex = maxRange;
 
     float normalised = (heatIndex - minRange) / (maxRange - minRange);
     Serial.println(normalised);
 
-    // 将规范化的heat index值映射到 RGB
-    // 渐变：蓝色（低）→ 黄色（中）→ 红色（高）
-    // cv.R = (int)(normalised * 255); // 红色随heat index增加
-    // cv.G = (int)((1.0 - fabs(normalised - 0.5) * 2.0) * 255); // 绿色在范围中间达到峰值，并向两端减小
-    // cv.B = (int)((1.0 - normalised) * 255); // 红色随heat index增加而减小
+   
+    // cv.R = (int)(normalised * 255); 
+    // cv.G = (int)((1.0 - fabs(normalised - 0.5) * 2.0) * 255); 
+    // cv.B = (int)((1.0 - normalised) * 255);
 
+    //The normalized heat index values are mapped to RGB
+    //Gradient: blue (lowest) → green (lower) →yello(higer) → red (highest)
     cv.R = (int)(pow(normalised, 0.5) * 255);
     cv.G = (int)(sin(normalised * M_PI) * 255);
     cv.B = (int)(pow(1.0 - normalised, 2.0) * 255);
 
-    //确保RGBW的值不超过255这个上限
+    //Make sure the value of RGBW does not exceed the upper limit of 255
     if (cv.R > 255) cv.R = 255;
     if (cv.G > 255) cv.G = 255;
     if (cv.B > 255) cv.B = 255;
@@ -207,7 +208,7 @@ void sendmqtt(float temperature, float humidity){
     char mqtt_message_2[100];
     char mqtt_message_3[100];
 
-    //使用上面的函数获取RGBW的值
+    //get RGB value 
     ColorValues cv = decide_message(temperature, humidity);
     
     sprintf(mqtt_message_3,"{\"brightness\": %d}", 119);
