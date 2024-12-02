@@ -13,4 +13,6 @@ DHT22
 1.When the heat index goes from low to high, the color of the light changes from Blue -&gt; Green -&gt; Yellow -&gt; Red. Thus, the body comfort can be intuitively seen.</br>
 2.At the same time, for some people with color cognitive impairment (such as color weakness), the number and brightness of the lights can be used to display the value of heat index (for example, when the value of heat index is low, the lights will be less, and when the value of heat index is high, the lights will be more).</br>
 
+## Structure
+
 
