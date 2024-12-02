@@ -6,6 +6,10 @@ Therefore, I hope to have an index that can combine temperature and humidity, an
 
 The index I used is heat index(HI), which can combine temperature and humidity in a hot environment.</br>
 
+![WechatIMG554](https://github.com/user-attachments/assets/47b50529-1935-4d24-ae9f-afdead9f2eef)
+
+
+
 ## Device Introduction 
 ### Sensor
 DHT22
