@@ -4,4 +4,6 @@ Temperature and humidity are two important indicators in daily life. The change 
 
 Therefore, I hope to have an index that can combine temperature and humidity, and obtain an index through certain calculations, which more intuitively reflects the direct effect of temperature and humidity on human comfort. And convert the values into color information, to Chrono Lumina, so that people can more quickly and directly see the body comfort.</br>
 
-The index I used is heat index(HI), which can combine temperature and humidity in a hot environment.
+The index I used is heat index(HI), which can combine temperature and humidity in a hot environment.</br>
+
+## 
