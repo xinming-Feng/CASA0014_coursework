@@ -15,5 +15,11 @@ DHT22
 
 ## Structure
 
-<strong>first_versin</stong>
+<strong>first_versin</stong>:The original version did not use heat index, only mixed temperature and humidity, tiled to RGB three channels, and did not have obvious color development.</br>
+<strong>second_versin</stong>:Some temperature conditions were set to make the RGB color more obvious, but the actual values were not meaningful.</br>
+<strong>third_versin</stong>:The heat index is used to control the color of the lamp, but only for a single light.</br>
+<strong>final_version_multi</stong>:Changes in the value of the heat index are mapped to the number and brightness of lights, but have not been tested.
+
+
+
 
