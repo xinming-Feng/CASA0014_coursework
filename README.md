@@ -22,7 +22,7 @@ DHT22
 **first_versin**: The original version did not use heat index, only mixed temperature and humidity, tiled to RGB three channels, and did not have obvious color development.</br>
 **second_versin**: Some temperature conditions were set to make the RGB color more obvious, but the actual values were not meaningful.</br>
 **third_versin**: The heat index is used to control the color of the lamp, but only for a single light.</br>
-**final_version_multi**: Changes in the value of the heat index are mapped to the number and brightness of lights, but have not been tested.
+**final_version_multi**: Changes in the value of the heat index are mapped to the number and brightness of lights, The overall 52 lights will be divided into four groups. As the value of HI increases, the color of the lights will not only change from Blue -&gt; Green -&gt;  Yellow -&gt;  Red, the number of lights on will also increase from left to right. And the brightness of the lights will increase.
 
 
 
