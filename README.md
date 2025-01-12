@@ -1,4 +1,4 @@
-# CASA0014_coursework
+# “ HOW HOT”--Temperature sensing assistance system
 ## Prototypes and ideas
 Temperature and humidity are two important indicators in daily life. The change of temperature and humidity can lead to a change in people's body comfort. However, in daily life, people can intuitively see the changes in temperature and humidity, but can't observe the indoor or outdoor body comfort. The comfortable temperature (or humidity) plus the uncomfortable humidity (or temperature) will also lead to bad body feeling.</br>
 
@@ -8,6 +8,7 @@ The index I used is heat index(HI), which can combine temperature and humidity i
 
 ![WechatIMG554](https://github.com/user-attachments/assets/47b50529-1935-4d24-ae9f-afdead9f2eef)
 
+![5951736532971_ pic](https://github.com/user-attachments/assets/9bebd0be-2920-4d0a-89fa-eb76b168eab7)
 
 
 ## Device Introduction 
@@ -15,7 +16,11 @@ The index I used is heat index(HI), which can combine temperature and humidity i
 DHT22
 ### Functionality
 1.When the heat index goes from low to high, the color of the light changes from Blue -&gt; Green -&gt; Yellow -&gt; Red. Thus, the body comfort can be intuitively seen.</br>
+![5971736535023_ pic](https://github.com/user-attachments/assets/0e3926e4-d53b-4b74-add1-f5c750378472)
+
 2.At the same time, for some people with color cognitive impairment (such as color weakness), the number and brightness of the lights can be used to display the value of heat index (for example, when the value of heat index is low, the lights will be less, and when the value of heat index is high, the lights will be more).</br>
+
+![5981736535575_ pic](https://github.com/user-attachments/assets/915bc696-93f9-45ec-8842-c8dee5cc01e8)
 
 ## Structure
 
